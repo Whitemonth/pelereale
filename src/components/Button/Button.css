@@ -1,0 +1,27 @@
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  margin-top: 10px;
+}
+
+.button-main {
+  transition: 0.2s;
+  background-color: #cbe1f1;
+  border: 1px solid lightgray;
+  width: 130px;
+  height: 40px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.button-main:hover {
+  transition: 0.2s;
+  background-color: #2b7fbb;
+  color: white;
+  border: 1px solid lightgray;
+  width: 130px;
+  height: 40px;
+  font-size: medium;
+  font-weight: 500;
+}
