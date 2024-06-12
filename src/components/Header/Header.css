@@ -9,16 +9,16 @@
   position: fixed;
   display: flex;
   top: 0;
-  background: #cbe1f1;
+  background: #fcfcfc;
   border-bottom: 1px solid lightgray;
 }
 .logo-block {
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0 auto;
-  width: 83%;
+  width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -28,12 +28,12 @@
 }
 
 .menu-table {
-  width: 250px;
+  width: 140px;
 }
 
 .menu {
   width: 100%;
-  min-width: 180px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,12 +41,12 @@
 
 .menu a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 600;
 }
 
 .cart-block {
-  width: 250px;
+  width: 140px;
   display: flex;
   justify-content: center;
   align-items: center;

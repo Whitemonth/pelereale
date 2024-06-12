@@ -11,10 +11,7 @@ export default function Header() {
           <tbody>
             <tr className="menu">
               <td>
-                <a href="#">Главная</a>
-              </td>
-              <td>
-                <Link to="/goods">Товары</Link>
+                <Link to="/goods">Магазин</Link>
               </td>
               <td>
                 <Link to="/about">О нас</Link>
