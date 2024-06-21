@@ -5,10 +5,8 @@ import { useState } from "react";
 
 export default function Goods() {
   const [cart, setCart] = useState([]);
-
   const handleAddToCart = (id) => {
-    let newGood = { good: id, counter: 0 };
-
+    let newGood = { good: id, counter: 1 };
     setCart((prev) => [...prev, newGood]);
     console.log(cart);
   };
