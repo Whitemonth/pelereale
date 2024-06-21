@@ -1,8 +1,18 @@
 import Good from "../components/Good/Good";
 import "./Goods.css";
 import { GOODSDATA } from "../data.js";
+import { useState } from "react";
 
 export default function Goods() {
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (id) => {
+    let newGood = { good: id, counter: 0 };
+
+    setCart((prev) => [...prev, newGood]);
+    console.log(cart);
+  };
+
   function componentByGroup(group) {
     return GOODSDATA.map(function (data) {
       if (data.group === group) {
@@ -14,6 +24,8 @@ export default function Goods() {
             title={data.name}
             caption={data.description}
             price={data.price}
+            id={data.id}
+            onAddToCart={handleAddToCart}
           />
         );
       }
