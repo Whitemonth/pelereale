@@ -1,25 +1,10 @@
 import Good from "../components/Good/Good";
 import "./Goods.css";
 import { GOODSDATA } from "../data.js";
-import { useState } from "react";
+import useCart from "../hooks/useCart.jsx";
 
 export default function Goods() {
-  const [cart, setCart] = useState([]);
-
-  const handleAddToCart = (id) => {
-    const updatedCart = [...cart]; // Создаем копию массива cart
-    // Проверяем, есть ли в корзине товар с заданным id
-    const itemIndex = updatedCart.findIndex((item) => item.good === id);
-    if (itemIndex !== -1) {
-      // Если товар найден
-      updatedCart[itemIndex].counter++; // Увеличиваем counter на 1
-    } else {
-      updatedCart.push({ good: id, counter: 1 }); // Добавляем новый товар
-    }
-    setCart(updatedCart); // Обновляем состояние корзины
-  };
-  console.log(cart);
-
+  const { handleAddToCart } = useCart();
   function componentByGroup(group) {
     return GOODSDATA.map(function (data) {
       if (data.group === group) {
@@ -32,7 +17,7 @@ export default function Goods() {
             caption={data.description}
             price={data.price}
             id={data.id}
-            onAddToCart={handleAddToCart}
+            handleAddToCart={handleAddToCart}
           />
         );
       }

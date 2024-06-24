@@ -10,7 +10,11 @@ export default function Good(props) {
       <div className="goodTitle">{props.title}</div>
       <div className="goodCaption">{props.caption}</div>
       <div className="priceLabel">{`${props.price}₽`}</div>
-      <Button title={"Купить"} id={props.id} clicker={props.onAddToCart} />
+      <Button
+        title={"Купить"}
+        id={props.id}
+        handleAddToCart={props.handleAddToCart}
+      />
     </div>
   );
 }

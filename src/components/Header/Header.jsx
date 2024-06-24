@@ -1,9 +1,14 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
-import cart from "../../images/cart-ico.svg";
+import cartImg from "../../images/cart-ico.svg";
+import useCart from "../../hooks/useCart";
+import { useEffect } from "react";
 
 export default function Header() {
+  const { counter } = useCart();
+  
+
   return (
     <section className="header-sec">
       <div className="logo-block">
@@ -20,8 +25,10 @@ export default function Header() {
           </tbody>
         </table>
         <img src={logo} className="logo-img" alt="logo"></img>
+
         <div className="cart-block">
-          <img className="cart-img" src={cart} alt="cart"></img>
+          <img className="cart-img" src={cartImg} alt="cart"></img>
+          <p>1</p>
         </div>
       </div>
     </section>
