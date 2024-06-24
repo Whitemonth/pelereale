@@ -5,11 +5,20 @@ import { useState } from "react";
 
 export default function Goods() {
   const [cart, setCart] = useState([]);
+
   const handleAddToCart = (id) => {
-    let newGood = { good: id, counter: 1 };
-    setCart((prev) => [...prev, newGood]);
-    console.log(cart);
+    const updatedCart = [...cart]; // Создаем копию массива cart
+    // Проверяем, есть ли в корзине товар с заданным id
+    const itemIndex = updatedCart.findIndex((item) => item.good === id);
+    if (itemIndex !== -1) {
+      // Если товар найден
+      updatedCart[itemIndex].counter++; // Увеличиваем counter на 1
+    } else {
+      updatedCart.push({ good: id, counter: 1 }); // Добавляем новый товар
+    }
+    setCart(updatedCart); // Обновляем состояние корзины
   };
+  console.log(cart);
 
   function componentByGroup(group) {
     return GOODSDATA.map(function (data) {
