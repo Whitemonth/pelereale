@@ -1,10 +1,8 @@
 import Good from "../components/Good/Good";
 import "./Goods.css";
 import { GOODSDATA } from "../data.js";
-import useCart from "../hooks/useCart.jsx";
 
 export default function Goods() {
-  const { handleAddToCart } = useCart();
   function componentByGroup(group) {
     return GOODSDATA.map(function (data) {
       if (data.group === group) {
@@ -17,7 +15,6 @@ export default function Goods() {
             caption={data.description}
             price={data.price}
             id={data.id}
-            handleAddToCart={handleAddToCart}
           />
         );
       }

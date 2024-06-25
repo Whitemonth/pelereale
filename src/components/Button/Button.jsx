@@ -1,13 +1,14 @@
 import "./Button.css";
-import useCart from "../../hooks/useCart";
+import { useContext } from "react";
+import Context from "../../Context";
 
 export default function Button(props) {
-  const { handleAddToCart } = useCart();
+  const value = useContext(Context);
   return (
     <div className="button-container">
       <button
         className="button-main"
-        onClick={() => props.handleAddToCart(props.id)}
+        onClick={() => value.handleAddToCart(props.id)}
       >
         {props.title}{" "}
       </button>

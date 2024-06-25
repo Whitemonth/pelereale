@@ -2,13 +2,11 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import cartImg from "../../images/cart-ico.svg";
-import useCart from "../../hooks/useCart";
-import { useEffect } from "react";
+import { useContext } from "react";
+import Context from "../../Context";
 
 export default function Header() {
-  const { counter } = useCart();
-  
-
+  const value = useContext(Context);
   return (
     <section className="header-sec">
       <div className="logo-block">
@@ -28,7 +26,8 @@ export default function Header() {
 
         <div className="cart-block">
           <img className="cart-img" src={cartImg} alt="cart"></img>
-          <p>1</p>
+          <p style={{ marginLeft: "5px" }}> {value.cart.length}</p>
+          <button onClick={() => value.clearCart()}>Очистить корзину</button>
         </div>
       </div>
     </section>

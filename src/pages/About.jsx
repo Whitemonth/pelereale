@@ -1,11 +1,11 @@
-import useCart from "../hooks/useCart";
+import { useContext } from "react";
+import Context from "../Context";
 
 export default function About() {
-  const { handleAddToCart } = useCart();
+  const value = useContext(Context);
   return (
-    <section>
+    <section style={{ marginTop: "100px" }}>
       <p>About page</p>
-      <button onClick={() => handleAddToCart(5)}>test</button>
     </section>
   );
 }
