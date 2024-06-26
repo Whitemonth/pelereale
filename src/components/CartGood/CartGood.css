@@ -1,0 +1,41 @@
+.cart__good-container {
+  display: flex;
+  box-shadow: lightgray 3px 3px 10px 0px;
+  align-items: center;
+
+  justify-content: space-between;
+  flex-direction: row;
+
+  margin: 5px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  width: 100%;
+}
+
+.cart__good-img-block img {
+  width: 100px;
+}
+
+.cart__goodTitle {
+  width: 100%;
+  margin-top: 10px;
+  font-size: large;
+  font-weight: 600;
+}
+
+.cart__goodCaption {
+  max-height: 130px;
+  margin-top: 10px;
+  font-size: x-small;
+}
+
+.cart__priceLabel {
+  font-size: large;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex-grow: 2;
+}

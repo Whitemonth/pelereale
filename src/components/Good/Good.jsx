@@ -13,11 +13,6 @@ export default function Good(props) {
       <div className="goodTitle">{props.title}</div>
       <div className="goodCaption">{props.caption}</div>
       <div className="priceLabel">{`${props.price}₽`}</div>
-      {value.cart.findIndex((item) => item.good === props.id) ? (
-        <p>нет такого</p>
-      ) : (
-        <p>есть</p>
-      )}
       <Button title={"Купить"} id={props.id} />
     </div>
   );
