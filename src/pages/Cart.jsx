@@ -9,17 +9,26 @@ export default function Cart() {
   const value = useContext(Context);
 
   function showAddedToCart() {
-    return value.cart.map((e) => (
-      <CartGood
-        key={GOODSDATA[e.good].id}
-        imgUrl={GOODSDATA[e.good].imgurl}
-        imgAlt={GOODSDATA[e.good].imgalt}
-        title={GOODSDATA[e.good].name}
-        caption={GOODSDATA[e.good].description}
-        price={GOODSDATA[e.good].price}
-        id={GOODSDATA[e.good].id}
-      />
-    ));
+    if (value.cart.length === 0) {
+      return (
+        <div className="cart__empty_block">
+          <p>Корзина пуста</p>
+        </div>
+      );
+    } else {
+      return value.cart.map((e) => (
+        <CartGood
+          key={GOODSDATA[e.good - 1].id}
+          imgUrl={GOODSDATA[e.good - 1].imgurl}
+          imgAlt={GOODSDATA[e.good - 1].imgalt}
+          title={GOODSDATA[e.good - 1].name}
+          caption={GOODSDATA[e.good - 1].description}
+          price={GOODSDATA[e.good - 1].price}
+          id={GOODSDATA[e.good - 1].id}
+          count={e.counter}
+        />
+      ));
+    }
   }
   {
   }
@@ -30,6 +39,10 @@ export default function Cart() {
           <h2>Корзина</h2>
         </div>
         <div className="cart__goods_block">{showAddedToCart()}</div>
+        <div className="cart__total_block">
+          {value.cart.length !== 0 ? <p>Итого: {}</p> : <></>}
+          <p>{}</p>
+        </div>
       </div>
     </section>
   );
