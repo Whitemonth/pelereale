@@ -52,7 +52,7 @@ export default function Cart() {
         <div className="cart__goods_block">{showAddedToCart()}</div>
         <div className="cart__total_block">
           {value.cart.length !== 0 ? (
-            <div>
+            <div className="cart__total_ammounts">
               <p>Товаров в корзине: {sumCounts(value.cart)}</p>
               <p>Итоговая стоимость: {value.cartSum}</p>
             </div>
