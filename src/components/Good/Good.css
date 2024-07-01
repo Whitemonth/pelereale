@@ -1,12 +1,13 @@
 .good-container {
   display: flex;
   box-shadow: lightgray 3px 3px 10px 0px;
+  border-radius: 10px;
   align-items: center;
   flex-direction: column;
   flex-basis: 15%;
   margin: 5px;
   border: 1px solid lightgray;
-  padding: 0 20px 30px 20px;
+  padding: 0 15px 15px 15px;
 }
 
 .good-img-block img {
@@ -27,6 +28,7 @@
 }
 
 .priceLabel {
+  color: rgb(61, 152, 255);
   font-size: large;
   font-weight: 500;
   width: 100%;

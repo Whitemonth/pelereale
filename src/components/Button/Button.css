@@ -7,8 +7,10 @@
 
 .button-main {
   transition: 0.2s;
-  background-color: #cbe1f1;
-  border: 1px solid lightgray;
+  background-color: white;
+  color: #0065ab;
+  border: 1px solid #0065ab;
+  border-radius: 8px;
   width: 130px;
   height: 40px;
   font-size: medium;
@@ -17,9 +19,19 @@
 
 .button-main:hover {
   transition: 0.2s;
-  background-color: #2b7fbb;
+  background-color: #0065ab;
   color: white;
-  border: 1px solid lightgray;
+  border: 2px solid #0065ab;
+  width: 130px;
+  height: 40px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.button-main:active {
+  background-color: #8bfcc7;
+  color: rgb(0, 0, 0);
+  border: 2px solid lightgray;
   width: 130px;
   height: 40px;
   font-size: medium;

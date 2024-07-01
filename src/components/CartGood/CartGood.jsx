@@ -4,8 +4,7 @@ import Context from "../../Context";
 
 export default function CartGood(props) {
   const value = useContext(Context);
-  let goodPrice = props.price * props.count;
-  console.log(goodPrice);
+
   return (
     <div className="cart__good-container">
       <div className="cart__good-img-block">
@@ -13,16 +12,22 @@ export default function CartGood(props) {
       </div>
       <div className="cart__caption_block">
         <div className="cart__goodTitle">{props.title}</div>
-        <div className="cart__goodCaption">{props.caption}</div>
+        {/* <div className="cart__goodCaption">{props.caption}</div> */}
       </div>
       <div className="cart__buttons_block">
-        <div className="cart__priceLabel">{`${goodPrice} ₽`}</div>
+        <div className="cart__priceLabel">{`${
+          props.price * props.count
+        } ₽`}</div>
         <div className="cart__counter_buttons">
-          <button onClick={() => value.handleRemoveFromCart(props.id)}>
+          <button
+            onClick={() => value.handleRemoveFromCart(props.id, props.price)}
+          >
             -
           </button>
           <p>{props.count}</p>
-          <button onClick={() => value.handleAddToCart(props.id)}>+</button>
+          <button onClick={() => value.handleAddToCart(props.id, props.price)}>
+            +
+          </button>
         </div>
       </div>
     </div>

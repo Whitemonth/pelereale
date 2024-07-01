@@ -12,15 +12,14 @@
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0 auto;
-  width: 50%;
+  width: 67%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo-img {
-  width: 200px;
-  height: 40px;
+  width: 164px;
 }
 
 .menu-table {
@@ -42,9 +41,9 @@
 }
 
 .cart-block {
-  width: 140px;
+  width: 216px;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 

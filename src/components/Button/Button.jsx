@@ -8,7 +8,7 @@ export default function Button(props) {
     <div className="button-container">
       <button
         className="button-main"
-        onClick={() => value.handleAddToCart(props.id)}
+        onClick={() => value.handleAddToCart(props.id, props.price)}
       >
         {props.title}{" "}
       </button>

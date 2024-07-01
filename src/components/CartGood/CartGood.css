@@ -91,10 +91,6 @@
   flex-direction: column;
 }
 
-.cart__page_title {
-  width: 80%;
-}
-
 .cart__page_title h2 {
   color: rgb(146, 146, 146);
 }

@@ -9,6 +9,8 @@ import Cart from "./pages/Cart";
 
 function App() {
   const [cart, setCart] = useState([]); // state для корзины
+  const [cartSum, setCartSum] = useState(0); // state для суммы товаров
+
   // Используем useEffect для загрузки корзины из localStorage при загрузке компонента
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
@@ -17,50 +19,77 @@ function App() {
     }
   }, []);
 
+  // Используем useEffect для загрузки суммы из localStorage при загрузке компонента
+  useEffect(() => {
+    const savedSum = localStorage.getItem("sum");
+    if (savedSum) {
+      setCartSum(JSON.parse(savedSum));
+    }
+  }, []);
+
   // Используем useEffect для сохранения корзины в localStorage при изменении
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const handleAddToCart = (id) => {
-    // хэндлер для добавления товаров в корзину
-    const updatedCart = [...cart]; // Создаем копию массива cart
+  // Используем useEffect для сохранения суммы товаров в localStorage при изменении
+  useEffect(() => {
+    localStorage.setItem("sum", JSON.stringify(cartSum));
+  }, [cartSum]);
+
+  // хэндлер для добавления товаров в корзину
+  const handleAddToCart = (id, price) => {
+    setCartSum((prev) => prev + price);
+
+    // Создаем копию массива cart
+    const updatedCart = [...cart];
+
     // Проверяем, есть ли в корзине товар с заданным id
     const itemIndex = updatedCart.findIndex((item) => item.good === id);
     if (itemIndex !== -1) {
-      // Если товар найден
-      updatedCart[itemIndex].counter++; // Увеличиваем counter на 1
+      // Если товар найден:
+      // Увеличиваем counter на 1
+      updatedCart[itemIndex].counter++;
     } else {
-      updatedCart.push({ good: id, counter: 1 }); // Добавляем новый товар
+      // Создаем в корзине новый товар
+      updatedCart.push({ good: id, counter: 1 });
     }
-    setCart(updatedCart); // Обновляем состояние корзины
+    // Обновляем состояние корзины
+    setCart(updatedCart);
   };
 
-  const handleRemoveFromCart = (id) => {
-    // хэндлер для удаления товаров из корзины
-    let updatedCart = [...cart]; // Создаем копию массива cart
+  // хэндлер для удаления товаров из корзины
+  const handleRemoveFromCart = (id, price) => {
+    setCartSum((prev) => prev - price);
+
+    // Создаем копию массива cart
+    let updatedCart = [...cart];
+
     // Проверяем, есть ли в корзине товар с заданным id
     const itemIndex = updatedCart.findIndex((item) => item.good === id);
-
+    // Если товар найден
+    // Уменьшаем counter на 1
     if (itemIndex !== -1) {
-      // Если товар найден
-      updatedCart[itemIndex].counter--; // Уменьшаем counter на 1
+      updatedCart[itemIndex].counter--;
     }
+    // Если счетчик равен нулю - удаляем товар из корзины
     if (updatedCart[itemIndex].counter === 0) {
-      // Если счетчик равен нулю - удаляем товар из корзины
       updatedCart = updatedCart.filter((item) => item.good !== id);
     }
 
-    setCart(updatedCart); // Обновляем состояние корзины
+    // Обновляем состояние корзины
+    setCart(updatedCart);
   };
 
   const clearCart = (id) => {
     // Удаление всех товаров из корзины
     setCart([]);
+    setCartSum(0);
   };
 
   const value = {
     cart,
+    cartSum,
     handleAddToCart,
     handleRemoveFromCart,
     clearCart,

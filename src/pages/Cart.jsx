@@ -8,6 +8,14 @@ import CartGood from "../components/CartGood/CartGood";
 export default function Cart() {
   const value = useContext(Context);
 
+  const sumCounts = (cart) => {
+    let sum = 0;
+    for (let item of cart) {
+      sum += item.counter;
+    }
+    return sum;
+  };
+
   function showAddedToCart() {
     if (value.cart.length === 0) {
       return (
@@ -37,10 +45,20 @@ export default function Cart() {
       <div className="cart__container">
         <div className="cart__page_title">
           <h2>Корзина</h2>
+          <button className="cart__clear_all" onClick={() => value.clearCart()}>
+            Очистить корзину
+          </button>
         </div>
         <div className="cart__goods_block">{showAddedToCart()}</div>
         <div className="cart__total_block">
-          {value.cart.length !== 0 ? <p>Итого: {}</p> : <></>}
+          {value.cart.length !== 0 ? (
+            <div>
+              <p>Товаров в корзине: {sumCounts(value.cart)}</p>
+              <p>Итоговая стоимость: {value.cartSum}</p>
+            </div>
+          ) : (
+            <></>
+          )}
           <p>{}</p>
         </div>
       </div>

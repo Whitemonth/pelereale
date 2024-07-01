@@ -13,7 +13,7 @@ export default function Good(props) {
       <div className="goodTitle">{props.title}</div>
       <div className="goodCaption">{props.caption}</div>
       <div className="priceLabel">{`${props.price}₽`}</div>
-      <Button title={"Купить"} id={props.id} />
+      <Button title={"Купить"} id={props.id} price={props.price} />
     </div>
   );
 }

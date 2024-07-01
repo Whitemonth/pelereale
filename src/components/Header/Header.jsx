@@ -29,14 +29,11 @@ export default function Header() {
         <img src={logo} className="logo-img" alt="logo"></img>
 
         <div className="cart-block">
-          <img className="cart-img" src={cartImg} alt="cart"></img>
+          <Link to="/cart">
+            <img className="cart-img" src={cartImg} alt="cart"></img>
+          </Link>
+
           <p style={{ marginLeft: "5px" }}> {value.cart.length}</p>
-          <button
-            style={{ marginLeft: "10px" }}
-            onClick={() => value.clearCart()}
-          >
-            Очистить корзину
-          </button>
         </div>
       </div>
     </section>
