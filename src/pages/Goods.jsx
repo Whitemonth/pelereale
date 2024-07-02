@@ -9,6 +9,7 @@ export default function Goods() {
         return (
           <Good
             key={data.id}
+            brand={data.brand}
             imgUrl={data.imgurl}
             imgAlt={data.imgalt}
             title={data.name}

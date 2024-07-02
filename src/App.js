@@ -100,6 +100,7 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/" element={<Goods />}></Route>
           <Route path="/goods" element={<Goods />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/cart" element={<Cart />}></Route>

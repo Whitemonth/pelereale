@@ -1,15 +1,43 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
+import menuImg from "../../images/menu-icon.png";
 import cartImg from "../../images/cart-ico.svg";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Context from "../../Context";
 
 export default function Header() {
+  const [isHidden, setHidden] = useState(true);
+  const toggleMenuVisibility = () => {
+    setHidden(!isHidden);
+  };
   const value = useContext(Context);
   return (
     <section className="header-sec">
       <div className="logo-block">
+        <div
+          onClick={toggleMenuVisibility}
+          className="menu-mobile"
+          id="menu_mobile"
+        >
+          <button className="menu_mobile_button">
+            <img src={menuImg}></img>
+          </button>
+          <div
+            style={{ visibility: isHidden ? "hidden" : "visible" }}
+            className="menu_drop_down"
+          >
+            <Link className="menu_mob_item" to="/goods">
+              Магазин
+            </Link>
+            <Link className="menu_mob_item" to="/cart">
+              Корзина
+            </Link>
+            <Link className="menu_mob_item" to="/about">
+              О нас
+            </Link>
+          </div>
+        </div>
         <table className="menu-table">
           <tbody>
             <tr className="menu">

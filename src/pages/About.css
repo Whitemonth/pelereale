@@ -1,0 +1,56 @@
+.about__container {
+  background-image: url("/public/images/cosmetic-treatment-with-copy-space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__wrapper {
+  width: 85%;
+  height: 1000px;
+  margin-top: 100px;
+}
+
+.about__text_block_left {
+  color: rgb(46, 46, 46);
+  width: 50%;
+  height: 400px;
+  font-size: large;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 780px) {
+  .about__text_block_left {
+    color: rgb(46, 46, 46);
+    width: 90%;
+    height: 400px;
+    font-size: large;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .about__text_block_left {
+    color: rgb(46, 46, 46);
+    width: 50%;
+    height: 400px;
+    font-size: large;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .about__text_block_left {
+    color: rgb(46, 46, 46);
+    width: 35%;
+    height: 400px;
+    font-size: large;
+    font-weight: 500;
+  }
+}

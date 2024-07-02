@@ -130,3 +130,44 @@
   flex-direction: column;
   align-items: end;
 }
+
+@media screen and (max-width: 780px) {
+  .cart__good-container {
+    display: flex;
+    box-shadow: lightgray 3px 3px 10px 0px;
+    align-items: center;
+    border-radius: 10px;
+
+    justify-content: space-between;
+    flex-direction: row;
+
+    margin: 5px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .cart__goods_block {
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart__goodTitle {
+    width: 100%;
+    margin-top: 10px;
+    font-size: medium;
+    font-weight: 500;
+  }
+
+  .cart__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 90%;
+  }
+}
