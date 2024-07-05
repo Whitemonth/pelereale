@@ -11,7 +11,7 @@
   color: #0065ab;
   border: 1px solid #d4e7eb;
   border-radius: 8px;
-  width: 130px;
+  width: 100%;
   height: 40px;
   font-size: medium;
   font-weight: 500;
@@ -22,7 +22,7 @@
   background-color: #0065ab;
   color: white;
   border: 2px solid #0065ab;
-  width: 130px;
+  width: 100%;
   height: 40px;
   font-size: medium;
   font-weight: 500;
@@ -32,10 +32,56 @@
   background-color: #797979;
   color: rgb(255, 255, 255);
   border: 2px solid lightgray;
-  width: 130px;
+  width: 100%;
   height: 40px;
   font-size: medium;
   font-weight: 500;
+}
+
+.button__buttons_block {
+  font-size: large;
+  font-weight: 500;
+  color: #0065ab;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button__counter_buttons {
+  background-color: lightgray;
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button__counter_buttons button {
+  font-size: x-large;
+  font-weight: 500;
+  color: #0065ab;
+  width: 20%;
+  height: 80%;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: none;
+  border-radius: 5px;
+  background-color: aliceblue;
+}
+
+.button__counter_buttons button:hover {
+  width: 20%;
+  height: 85%;
+  margin-left: 3px;
+  margin-right: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(99, 156, 206);
+  color: white;
 }
 
 @media screen and (max-width: 780px) {
@@ -52,7 +98,7 @@
     color: #0065ab;
     border: 1px solid #d4e7eb;
     border-radius: 8px;
-    width: 200px;
+    width: 100%;
     height: 60px;
     font-size: medium;
     font-weight: 500;
@@ -63,7 +109,7 @@
     background-color: #0065ab;
     color: white;
     border: 2px solid #0065ab;
-    width: 200px;
+    width: 100%;
     height: 60px;
     font-size: medium;
     font-weight: 500;
@@ -73,9 +119,38 @@
     background-color: #797979;
     color: rgb(255, 255, 255);
     border: 2px solid lightgray;
-    width: 200px;
+    width: 100%;
     height: 60px;
     font-size: medium;
     font-weight: 500;
+  }
+
+  .button__buttons_block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .button__counter_buttons {
+    background-color: lightgray;
+    width: 100%;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .button__counter_buttons button {
+    width: 20%;
+    height: 90%;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: none;
+    border-radius: 5px;
+    background-color: aliceblue;
   }
 }

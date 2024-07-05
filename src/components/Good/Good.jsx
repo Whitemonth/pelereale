@@ -5,7 +5,6 @@ import Context from "../../Context";
 import "./Good.css";
 export default function Good(props) {
   const value = useContext(Context);
-  console.log(props.brand);
 
   return (
     <div className="good-container">

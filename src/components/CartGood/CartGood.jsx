@@ -12,7 +12,6 @@ export default function CartGood(props) {
       </div>
       <div className="cart__caption_block">
         <div className="cart__goodTitle">{props.title}</div>
-        {/* <div className="cart__goodCaption">{props.caption}</div> */}
       </div>
       <div className="cart__buttons_block">
         <div className="cart__priceLabel">{`${

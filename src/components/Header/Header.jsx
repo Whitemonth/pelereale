@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo2.png";
 import menuImg from "../../images/menu-icon.png";
 import cartImg from "../../images/cart-ico.svg";
 import { useContext, useEffect, useState } from "react";
@@ -12,6 +12,15 @@ export default function Header() {
     setHidden(!isHidden);
   };
   const value = useContext(Context);
+
+  const sumCounts = (cart) => {
+    let sum = 0;
+    for (let item of cart) {
+      sum += item.counter;
+    }
+    return sum;
+  };
+
   return (
     <section className="header-sec">
       <div className="logo-block">
@@ -61,7 +70,7 @@ export default function Header() {
             <img className="cart-img" src={cartImg} alt="cart"></img>
           </Link>
 
-          <p style={{ marginLeft: "5px" }}> {value.cart.length}</p>
+          <p style={{ marginLeft: "5px" }}> {sumCounts(value.cart)}</p>
         </div>
       </div>
     </section>
