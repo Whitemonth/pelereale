@@ -62,8 +62,9 @@ export default function Header() {
             </tr>
           </tbody>
         </table>
-
-        <img src={logo} className="logo-img" alt="logo"></img>
+        <Link to="/">
+          <img src={logo} className="logo-img" alt="logo"></img>
+        </Link>
 
         <div className="cart-block">
           <Link to="/cart">
