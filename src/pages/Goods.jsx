@@ -16,7 +16,8 @@ export default function Goods() {
             caption={data.description}
             price={data.price}
             id={data.id}
-            counter={data.counter}
+            weight={data.weight}
+            weightType={data.weightType}
           />
         );
       }

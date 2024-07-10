@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Context from "./Context";
 import { useState, useEffect } from "react";
 import Cart from "./pages/Cart";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [cart, setCart] = useState([]); // state для корзины
@@ -105,6 +106,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
         </Routes>
+        <Footer />
       </div>
     </Context.Provider>
   );

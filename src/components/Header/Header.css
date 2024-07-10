@@ -40,6 +40,18 @@
   font-weight: 600;
 }
 
+.menu a:hover {
+  text-decoration: none;
+  color: rgb(110, 110, 133);
+  font-weight: 600;
+}
+
+.menu a:active {
+  text-decoration: none;
+  color: rgb(52, 103, 145);
+  font-weight: 600;
+}
+
 .menu-mobile {
   display: none;
   width: 216px;
@@ -58,9 +70,6 @@
 
 .cart-img {
   width: 30px;
-}
-
-@media screen and (max-width: 1190px) {
 }
 
 @media screen and (max-width: 797px) {
@@ -96,7 +105,7 @@
     align-items: start;
     flex-direction: column;
     justify-content: space-between;
-    margin: 18px 2px 2px 8px;
+    margin: 18px 2px 2px -18px;
     width: 250px;
     height: 250px;
     background-color: #d4e7eb;
@@ -117,6 +126,15 @@
   }
   .menu_mob_item:hover {
     background-color: #a1b0b3;
+    color: rgb(110, 110, 133);
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+  }
+
+  .menu_mob_item:active {
+    background-color: #a1b0b3;
+    color: rgb(52, 103, 145);
     padding: 20px;
     width: 80%;
     height: 100%;
