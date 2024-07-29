@@ -7,7 +7,7 @@ import PhoneInput from "../components/PhoneInput/PhoneInput";
 export default function Checkout() {
   const sendToTelegram = async (data) => {
     const token = "7395286921:AAE9Qw4NrhJx7cHCtgHoQBgPEAGGOeX1pLA"; // Ваш токен
-    const chatId = "YOUR_CHANNEL_CHAT_ID"; // Замените на ID вашего канала
+    const chatId = "43504525"; // Замените на ID вашего канала
 
     const message = data; // Текст сообщения, который нужно отправить
 
