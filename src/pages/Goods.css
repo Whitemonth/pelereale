@@ -46,4 +46,11 @@
     grid-template-columns: 90%;
     justify-content: center;
   }
+
+  .group-title p {
+    font-size: x-large;
+    width: 80%;
+    font-weight: 300;
+    color: rgb(91, 91, 91);
+  }
 }

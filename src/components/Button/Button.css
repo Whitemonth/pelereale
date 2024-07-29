@@ -73,17 +73,6 @@
   background-color: aliceblue;
 }
 
-.button__counter_buttons button:hover {
-  width: 20%;
-  height: 85%;
-  margin-left: 3px;
-  margin-right: 3px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(99, 156, 206);
-  color: white;
-}
-
 @media screen and (max-width: 780px) {
   .button-container {
     width: 100%;
@@ -106,6 +95,16 @@
 
   .button-main:active {
     background-color: #797979;
+    color: rgb(255, 255, 255);
+    border: 2px solid lightgray;
+    width: 100%;
+    height: 60px;
+    font-size: medium;
+    font-weight: 500;
+  }
+
+  .button-main:hover {
+    background-color: #0065ab;
     color: rgb(255, 255, 255);
     border: 2px solid lightgray;
     width: 100%;
@@ -145,4 +144,14 @@
 }
 
 @media (hover: hover) {
+  .button__counter_buttons button:hover {
+    width: 20%;
+    height: 85%;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(99, 156, 206);
+    color: white;
+  }
 }

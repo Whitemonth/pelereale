@@ -1,15 +1,10 @@
 .cart__good-container {
   display: flex;
-  box-shadow: lightgray 3px 3px 10px 0px;
   align-items: center;
-  border-radius: 10px;
-
   justify-content: space-between;
   flex-direction: row;
-
   margin: 5px;
-  border: 1px solid lightgray;
-  padding: 20px;
+  border-bottom: 1px solid rgb(231, 231, 231);
   width: 100%;
 }
 
@@ -84,6 +79,10 @@
 }
 
 .cart__goods_block {
+  padding: 5px 20px 5px 5px;
+  border-radius: 10px;
+  box-shadow: lightgray 3px 3px 10px 0px;
+  border: 1px solid lightgray;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -126,7 +125,7 @@
 }
 
 .cart__total_block {
-  width: 83%;
+  width: 81%;
   height: 100%;
   display: flex;
   justify-content: end;
@@ -143,15 +142,10 @@
 @media screen and (max-width: 780px) {
   .cart__good-container {
     display: flex;
-    box-shadow: lightgray 3px 3px 10px 0px;
     align-items: center;
-    border-radius: 10px;
-
     justify-content: space-between;
     flex-direction: row;
-
     margin: 5px;
-    border: 1px solid lightgray;
     padding: 10px;
     width: 100%;
   }

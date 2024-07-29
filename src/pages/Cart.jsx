@@ -2,8 +2,9 @@ import "./Cart.css";
 import { useContext } from "react";
 import Context from "../Context";
 import { GOODSDATA } from "../data";
-import Good from "../components/Good/Good";
+
 import CartGood from "../components/CartGood/CartGood";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const value = useContext(Context);
@@ -38,8 +39,7 @@ export default function Cart() {
       ));
     }
   }
-  {
-  }
+
   return (
     <section className="cart__section">
       <div className="cart__container">
@@ -55,6 +55,11 @@ export default function Cart() {
             <div className="cart__total_ammounts">
               <p>Товаров в корзине: {sumCounts(value.cart)}</p>
               <p>Итоговая стоимость: {value.cartSum}</p>
+              <div className="checkout__btn">
+                <Link to="/Checkout">
+                  <button>Перейти к оформлению</button>
+                </Link>
+              </div>
             </div>
           ) : (
             <></>

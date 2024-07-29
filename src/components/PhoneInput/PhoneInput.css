@@ -1,0 +1,29 @@
+.phone_wrapper {
+  transition: 1s;
+}
+
+.phone_input {
+  padding: 5px;
+  transition: 1s;
+  width: 155px;
+  font-size: large;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.phone_input:active {
+  transition: 1s;
+  width: 155px;
+  font-size: large;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.hidden_phonecheck {
+  visibility: hidden;
+  color: brown;
+}

@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Goods from "./pages/Goods";
 import About from "./pages/About";
+import Checkout from "./pages/Checkout";
 import Header from "./components/Header/Header";
 import Context from "./Context";
 import { useState, useEffect } from "react";
@@ -105,6 +106,7 @@ function App() {
           <Route path="/goods" element={<Goods />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
         </Routes>
         <Footer />
       </div>
