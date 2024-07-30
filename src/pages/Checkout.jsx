@@ -41,16 +41,21 @@ export default function Checkout() {
 
   function sendDataToBot() {
     let data = "";
+    let time = new Date();
     data = value.cart.map(
       (e) =>
         `${GOODSDATA[e.good - 1].name} : ${e.counter} шт. x ${
           GOODSDATA[e.good - 1].price
         } руб.`
     );
+    data.push(
+      `Дата заказа ${time.toLocaleDateString()} ${time.toLocaleTimeString()}`
+    );
     data.push(`Итоговая сумма заказа: ${value.cartSum} руб.`);
-    data.push(`Тел. для свяи: ${document.getElementById("phone").value}`);
+    data.push(`Тел. для связи: ${document.getElementById("phone").value}`);
     console.log(data.join(" "));
-    sendToTelegram(data);
+
+    sendToTelegram(data.join(" "));
   }
 
   function sendCheckout() {

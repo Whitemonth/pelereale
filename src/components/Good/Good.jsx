@@ -1,11 +1,7 @@
 import Button from "../Button/Button";
-import { useContext } from "react";
-import Context from "../../Context";
 
 import "./Good.css";
 export default function Good(props) {
-  const value = useContext(Context);
-
   return (
     <div className="good-container">
       <div className="good-img-block">

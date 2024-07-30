@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import Context from "../Context";
 import "./About.css";
 
 export default function About() {

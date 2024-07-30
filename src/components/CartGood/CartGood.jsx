@@ -1,5 +1,5 @@
 import "./CartGood.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Context from "../../Context";
 
 export default function CartGood(props) {

@@ -9,6 +9,8 @@ export default function Button(props) {
   let goodCounter = value.cart.map(function (element) {
     if (element.good === props.id) {
       return element.counter;
+    } else {
+      return true;
     }
   });
 
@@ -37,7 +39,7 @@ export default function Button(props) {
           className="button-main"
           onClick={() => value.handleAddToCart(props.id, props.price)}
         >
-          {props.title}{" "}
+          {props.title}
         </button>
       )}
     </div>

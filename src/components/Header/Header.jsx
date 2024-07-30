@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo2.png";
 import menuImg from "../../images/menu-icon.png";
 import cartImg from "../../images/cart-ico.svg";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Context from "../../Context";
 
 export default function Header() {
@@ -30,7 +30,7 @@ export default function Header() {
           id="menu_mobile"
         >
           <button className="menu_mobile_button">
-            <img src={menuImg}></img>
+            <img src={menuImg} alt="menu"></img>
           </button>
           <div
             style={{ visibility: isHidden ? "hidden" : "visible" }}

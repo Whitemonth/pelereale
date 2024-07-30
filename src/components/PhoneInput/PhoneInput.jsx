@@ -10,7 +10,7 @@ const PhoneInput = () => {
 
     let phoneArr = document.getElementById("phone").value.split("");
     let truePhone = phoneArr.filter((item) => item >= 0 && item <= 9);
-    if (truePhone.length == 12) {
+    if (truePhone.length === 12) {
       document.getElementById("phonecheckalert").style.visibility = "hidden";
     }
   };
@@ -18,6 +18,7 @@ const PhoneInput = () => {
   return (
     <div className="phone_wrapper">
       <InputMask
+        autoComplete="on"
         className="phone_input"
         mask="+7(999) 999-99-99"
         value={phone}

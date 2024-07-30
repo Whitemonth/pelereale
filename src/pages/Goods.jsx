@@ -20,6 +20,8 @@ export default function Goods() {
             weightType={data.weightType}
           />
         );
+      } else {
+        return true;
       }
     });
   }
