@@ -5,7 +5,7 @@
   position: fixed;
   display: flex;
   top: 0;
-  background: #d4e7eb;
+  background: rgb(42, 99, 166);
   border-bottom: 1px solid lightgray;
 }
 .logo-block {
@@ -20,6 +20,7 @@
 
 .logo-img {
   width: 164px;
+  filter: invert(1);
 }
 
 .menu-table {
@@ -36,13 +37,13 @@
 
 .menu a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 600;
 }
 
 .menu a:hover {
   text-decoration: none;
-  color: rgb(110, 110, 133);
+  color: rgb(83, 146, 201);
   font-weight: 600;
 }
 
@@ -59,6 +60,7 @@
 
 .menu-mobile img {
   width: 20px;
+  filter: invert(1);
 }
 
 .cart-block {
@@ -66,10 +68,12 @@
   display: flex;
   justify-content: end;
   align-items: center;
+  color: white;
 }
 
 .cart-img {
   width: 30px;
+  filter: invert(1);
 }
 
 @media screen and (max-width: 797px) {
@@ -108,27 +112,31 @@
     margin: 18px 2px 2px -18px;
     width: 250px;
     height: 250px;
-    background-color: #d4e7eb;
+    background-color: rgb(42, 99, 166);
     position: fixed;
   }
 
   .menu_drop_down a {
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: large;
     text-decoration: none;
     font-weight: 500;
   }
 
   .menu_mob_item {
+    display: flex;
+    align-items: center;
     padding: 20px;
     width: 100%;
     height: 100%;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    width: 84%;
   }
   .menu_mob_item:hover {
-    background-color: #a1b0b3;
-    color: rgb(110, 110, 133);
+    background-color: #69929b;
+    color: rgb(255, 255, 255);
     padding: 20px;
-    width: 80%;
+    width: 84%;
     height: 100%;
   }
 
@@ -136,7 +144,7 @@
     background-color: #a1b0b3;
     color: rgb(52, 103, 145);
     padding: 20px;
-    width: 80%;
+    width: 84%;
     height: 100%;
   }
 
