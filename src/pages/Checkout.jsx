@@ -6,8 +6,8 @@ import PhoneInput from "../components/PhoneInput/PhoneInput";
 
 export default function Checkout() {
   const sendToTelegram = async (data) => {
-    const token = "7395286921:AAE9Qw4NrhJx7cHCtgHoQBgPEAGGOeX1pLA"; // Ваш токен
-    const chatId = "43504525"; // Замените на ID вашего канала
+    const token = "7395286921:AAE9Qw4NrhJx7cHCtgHoQBgPEAGGOeX1pLA";
+    const chatId = "43504525";
 
     const message = data; // Текст сообщения, который нужно отправить
 
@@ -40,22 +40,39 @@ export default function Checkout() {
   };
 
   function sendDataToBot() {
-    let data = "";
+    function generateOrderNumber() {
+      const date = new Date();
+
+      const month = String(date.getMonth() + 1).padStart(2, "0"); // Месяцы с 0
+      const day = String(date.getDate()).padStart(2, "0");
+      const hours = String(date.getHours()).padStart(2, "0");
+      const minutes = String(date.getMinutes()).padStart(2, "0");
+
+      return `${month}${day}${hours}${minutes}`;
+    }
+    let data = [];
+    let tempGoods = "";
     let time = new Date();
-    data = value.cart.map(
+    let orderNumber = generateOrderNumber();
+    document.getElementById("ord-nmbr").innerText = orderNumber;
+    data.push(`Новый заказ №: ${orderNumber}.`);
+    data.push(
+      `Дата заказа ${time.toLocaleDateString()} ${time.toLocaleTimeString()}. Заказанные товары: `
+    );
+    tempGoods = value.cart.map(
       (e) =>
         `${GOODSDATA[e.good - 1].name} : ${e.counter} шт. x ${
           GOODSDATA[e.good - 1].price
         } руб.`
     );
-    data.push(
-      `Дата заказа ${time.toLocaleDateString()} ${time.toLocaleTimeString()}`
-    );
+    data.push(`${tempGoods}`);
+
     data.push(`Итоговая сумма заказа: ${value.cartSum} руб.`);
     data.push(`Тел. для связи: ${document.getElementById("phone").value}`);
     console.log(data.join(" "));
 
     sendToTelegram(data.join(" "));
+    document.getElementById("pop-up").showModal();
   }
 
   function sendCheckout() {
@@ -120,6 +137,21 @@ export default function Checkout() {
           </button>
         </div>
       </div>
+      <dialog className="checkout_popup" id="pop-up">
+        <div className="checkout_popup_hidden">
+          <h3>Заказ успешно отправлен.</h3>
+          <p>Номер Вашего заказа:</p>
+          <h2 id="ord-nmbr">0</h2>
+          <p>Наш менеджер свяжется с Вами в ближайшее время!</p>
+          <button
+            onClick={() => {
+              document.getElementById("pop-up").close();
+            }}
+          >
+            ОК
+          </button>
+        </div>
+      </dialog>
     </section>
   );
 }

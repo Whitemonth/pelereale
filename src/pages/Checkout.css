@@ -94,6 +94,28 @@
   border-radius: 10px;
 }
 
+.checkout_popup {
+  background: none;
+  border: none;
+}
+
+.checkout_popup_hidden {
+  padding: 20px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout_popup_hidden button {
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgb(86, 86, 206);
+  color: white;
+  font-size: large;
+}
+
 @media screen and (max-width: 780px) {
   .checkout__section {
     width: 90%;
