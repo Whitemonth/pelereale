@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Context from "../Context";
 import { GOODSDATA } from "../data";
 import PhoneInput from "../components/PhoneInput/PhoneInput";
+import { Link } from "react-router-dom";
 
 export default function Checkout() {
   const sendToTelegram = async (data) => {
@@ -72,6 +73,7 @@ export default function Checkout() {
     console.log(data.join(" "));
 
     sendToTelegram(data.join(" "));
+    value.clearCart();
     document.getElementById("pop-up").showModal();
   }
 
@@ -143,13 +145,15 @@ export default function Checkout() {
           <p>Номер Вашего заказа:</p>
           <h2 id="ord-nmbr">0</h2>
           <p>Наш менеджер свяжется с Вами в ближайшее время!</p>
-          <button
-            onClick={() => {
-              document.getElementById("pop-up").close();
-            }}
-          >
-            ОК
-          </button>
+          <Link to="/Cart">
+            <button
+              onClick={() => {
+                document.getElementById("pop-up").close();
+              }}
+            >
+              ОК
+            </button>
+          </Link>
         </div>
       </dialog>
     </section>

@@ -100,16 +100,19 @@
 }
 
 .checkout_popup_hidden {
+  text-align: center;
   padding: 20px;
   background-color: aliceblue;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 .checkout_popup_hidden button {
   height: 60px;
+  width: 300px;
   border-radius: 10px;
   background-color: rgb(86, 86, 206);
   color: white;
