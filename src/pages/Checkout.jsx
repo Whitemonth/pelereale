@@ -58,18 +58,18 @@ export default function Checkout() {
     document.getElementById("ord-nmbr").innerText = orderNumber;
     data.push(`Новый заказ №: ${orderNumber}.`);
     data.push(
-      `Дата заказа ${time.toLocaleDateString()} ${time.toLocaleTimeString()}. Заказанные товары: `
+      `\nДата заказа ${time.toLocaleDateString()} ${time.toLocaleTimeString()}. \nЗаказанные товары: \n`
     );
     tempGoods = value.cart.map(
       (e) =>
-        `${GOODSDATA[e.good - 1].name} : ${e.counter} шт. x ${
+        `\n${GOODSDATA[e.good - 1].name} : ${e.counter} шт. x ${
           GOODSDATA[e.good - 1].price
         } руб.`
     );
     data.push(`${tempGoods}`);
 
-    data.push(`Итоговая сумма заказа: ${value.cartSum} руб.`);
-    data.push(`Тел. для связи: ${document.getElementById("phone").value}`);
+    data.push(`\nИтоговая сумма заказа: ${value.cartSum} руб.`);
+    data.push(`\nТел. для связи: ${document.getElementById("phone").value}`);
     console.log(data.join(" "));
 
     sendToTelegram(data.join(" "));

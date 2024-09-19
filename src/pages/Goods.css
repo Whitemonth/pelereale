@@ -38,12 +38,12 @@
 
 @media screen and (max-width: 780px) {
   .goods-container {
-    max-width: 90%;
-    min-width: 390px;
+    max-width: 97%;
+    min-width: 360px;
     margin: 0 auto;
     margin-top: 10px;
     display: grid;
-    grid-template-columns: 90%;
+    grid-template-columns: 97%;
     justify-content: center;
   }
 
