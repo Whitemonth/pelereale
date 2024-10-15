@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function Checkout() {
   const sendToTelegram = async (data) => {
     const token = "7395286921:AAE9Qw4NrhJx7cHCtgHoQBgPEAGGOeX1pLA";
-    const chatId = "43504525";
+    const chatId = "-1002435198469";
 
     const message = data; // Текст сообщения, который нужно отправить
 
